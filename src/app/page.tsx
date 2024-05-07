@@ -11,26 +11,14 @@ export type uploadResult = {
   event: "success";
 };
 export default function Home() {
-  let [pics, setPics] = useState<any>([]);
   return (
     <div className="text-center my-3 ">
-      <CldUploadButton
+      {/* <CldUploadButton
         onUpload={(result: uploadResult) => {
-          setPics([
-            ...pics,
-            <CldImage
-              width="160"
-              height="100"
-              src={result.info.public_id}
-              sizes="100vw"
-              alt="Description of my image"
-            />,
-          ]);
+        
         }}
         uploadPreset="hestz1ns"
-      />
-
-      {pics}
+      /> */}
     </div>
   );
 }

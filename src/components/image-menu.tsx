@@ -1,29 +1,27 @@
-import { Menu, FolderPlus } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { AddToAlbumDialog } from "./add-to-album-dialog";
+import { SearchResult } from "@/app/gallary/page";
+import { useState } from "react";
 
-export function ImageMenu() {
+export function ImageMenu({ image }: { image: SearchResult }) {
+  const [open, setOpen] = useState(false);
   return (
     <div className="absolute right-16 top-3">
-      <DropdownMenu>
+      <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" className="p-0">
             <Menu className="w-10" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-42">
-          <DropdownMenuItem>
-            <FolderPlus className="mr-2 h-4 w-4" />
-            <span>Add to Album</span>
-            {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
-          </DropdownMenuItem>
+          <AddToAlbumDialog image={image} onClose={() => setOpen(false)} />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

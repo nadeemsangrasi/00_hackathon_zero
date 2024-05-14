@@ -47,7 +47,7 @@ const CloudinaryImage = (
           }}
         />
       )}
-      <ImageMenu />
+      <ImageMenu image={imageData} />
       <CldImage {...props} src={imageData.public_id} />
     </div>
   );

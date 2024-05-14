@@ -14,7 +14,6 @@ const favoritePage = async () => {
     .with_field("tags")
     .max_results(30)
     .execute()) as { resources: SearchResult[] };
-  console.log(result);
 
   return (
     <section>

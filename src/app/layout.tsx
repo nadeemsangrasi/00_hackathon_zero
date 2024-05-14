@@ -25,7 +25,7 @@ function SideMenu() {
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2">
                 <Folders />
-                <Link href="/favorite">Albums</Link>
+                <Link href="/albums">Albums</Link>
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2">
                 <Heart />

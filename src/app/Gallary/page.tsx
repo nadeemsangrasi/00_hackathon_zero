@@ -1,16 +1,20 @@
-import CloudinaryImage from "./CloudinaryImage";
 import UploadButton from "./upload-button";
+import CloudinaryImage from "./CloudinaryImage";
 import cloudinary from "cloudinary";
-type SearchResult = {
+
+export type SearchResult = {
   public_id: string;
+  tags: string[];
 };
 const page = async () => {
   let result = (await cloudinary.v2.search
     .expression("resource_type:image")
     .sort_by("created_at", "desc")
-    .max_results(20)
+    .with_field("tags")
+    .max_results(30)
     .execute()) as { resources: SearchResult[] };
   console.log(result);
+
   return (
     <div className="container mx-auto my-6">
       <div className="flex justify-between mb-5">
@@ -20,8 +24,9 @@ const page = async () => {
       <div className="flex gap-8 justify-between flex-wrap">
         {result.resources.map((data: any) => (
           <CloudinaryImage
+            path="/gallary"
             key={data.public_id}
-            src={data.public_id}
+            data={data}
             height={200}
             width={200}
             alt={"image"}

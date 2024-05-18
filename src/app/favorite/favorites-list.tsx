@@ -22,7 +22,7 @@ const FavoriteList = ({
 
   return (
     <section>
-      <div className="container mx-auto my-6 p-8 px-16">
+      <div className="md:container md:mx-auto my-6 md:p-8 md:px-16 ">
         <ImageGrid
           images={resources}
           getImage={(imageData: SearchResult) => {

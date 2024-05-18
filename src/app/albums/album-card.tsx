@@ -9,13 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Folders } from "./page";
 import Link from "next/link";
 export function AlbumCard({ folder }: { folder: Folders }) {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[100%]">
       <CardHeader>
         <CardTitle>{folder.name}</CardTitle>
         <CardDescription>All your {folder.name} image.</CardDescription>

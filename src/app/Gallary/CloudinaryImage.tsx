@@ -23,9 +23,7 @@ const CloudinaryImage = (
         <Heart
           color="red"
           fill="red"
-          className="absolute left-3 top-3 hover:text-red-500 cursor-pointer"
-          width={33}
-          height={33}
+          className=" w-[28px] h-[28px]  md:w-[32px] lg:h-[32px] absolute left-3 top-3 hover:text-red-500 cursor-pointer"
           onClick={() => {
             onUnheart?.(imageData);
             setIsFavorite(false);
@@ -36,9 +34,7 @@ const CloudinaryImage = (
         />
       ) : (
         <Heart
-          className="absolute left-3 top-3 hover:text-red-500 cursor-pointer"
-          width={33}
-          height={33}
+          className="w-[28px] h-[28px]  md:w-[32px] lg:h-[32px] absolute left-3 top-3 hover:text-red-500 cursor-pointer"
           onClick={() => {
             setIsFavorite(true);
             setTransition(() => {

@@ -14,7 +14,7 @@ const UploadButton = () => {
         <Upload />
 
         <CldUploadButton
-          onUpload={(result: uploadResult) => {
+          onUpload={(result: any): any => {
             router.refresh();
           }}
           uploadPreset="hestz1ns"

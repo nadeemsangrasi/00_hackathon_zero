@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { FolderOpenIcon, Heart, Image, Menu, X } from "lucide-react";
 import Link from "next/link";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function SideMenu() {
   let [clicked, setClicked] = useState(false);
   return (
     <div>
-      <div className="md:hidden flex py-7 z-[99]">
+      <div className="md:hidden flex py-7 z-[99] border-r h-full">
         <Menu
           onClick={() => {
             setClicked(!clicked);
@@ -19,7 +19,7 @@ export default function SideMenu() {
       </div>
       <div
         className={
-          "min-h-full bg-black pb-12 w-[180px] top-0 left-[-100%]  absolute md:static md:bg-none z-50 "
+          "min-h-full border-r  bg-black pb-12 w-[180px] top-0 left-[-100%]  absolute md:static md:bg-none z-50 "
         }
         style={clicked ? { left: "0" } : { left: "-100%" }}
       >
@@ -44,7 +44,6 @@ export default function SideMenu() {
                   <FolderOpenIcon />
                   <Link href="/albums">Albums</Link>
                 </Button>
-                {/* <AlbumButtons /> */}
               </div>
               <Button variant={"ghost"} className="justify-start gap-2">
                 <Heart />

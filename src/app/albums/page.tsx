@@ -16,8 +16,8 @@ const AlbumPage = async () => {
         <h1 className="text-4xl font-semibold">Albums</h1>
       </div>
       <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-8  ">
-        {folders.map((folder) => (
-          <AlbumCard folder={folder} />
+        {folders.map((folder: Folders, index: number) => (
+          <AlbumCard key={index} folder={folder} />
         ))}
       </div>
     </div>
